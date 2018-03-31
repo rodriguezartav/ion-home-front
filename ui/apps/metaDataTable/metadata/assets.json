@@ -1,0 +1,53 @@
+{
+  "groupBy": "status",
+  "groupByFields": ["status"],
+  "principalColumn": "name",
+  "columns": {
+    "name": {
+      "title": "nombre"
+    },
+    "type": {
+      "type": "radio",
+      "title": "tipo",
+      "options": ["Local", "Internacional"]
+    },
+    "status": {
+      "title": "Status"
+    },
+    "reference": {
+      "title": "Reference"
+    }
+  },
+  "listColumns": [
+    "name",
+    "type",
+    "reference",
+    "status"
+  ],
+  "listColumnsActions": [],
+  "editAction": {
+    "type": "newModalPage",
+    "route": "erp/assets/getColumnsForEdit",
+    "name": "Editar",
+    "title": "Editar"
+  },
+  "createAction": {
+    "type": "newModalPage",
+    "route": "erp/assets/getColumnsForCreate",
+    "name": "Crear",
+    "title": "Crear Proveedor"
+  },
+  "listColumnsActions": [],
+  "views": [{
+    "type": "data",
+    "name": "all",
+    "icon": "list"
+  }, {
+    "type": "data",
+    "name": "Other",
+    "icon": "grid"
+  }],
+  "route": "erp/assets",
+  "newComponent": "new",
+  "editComponnt": "edit"
+}

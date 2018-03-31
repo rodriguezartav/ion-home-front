@@ -1,0 +1,64 @@
+{
+  "groupBy": "namespace_id",
+  "principalColumn": "name",
+  "groupByFields": ["namespace_id"],
+  "dynamicColumns": [{
+    "name": "name",
+    "type": "concat",
+    "columns": ["first_name", "last_name"]
+  }],
+  "columns": {
+    "name": {
+      "title": "Name",
+      "dynamic": true,
+      "maxWidth": 200
+    },
+    "first_name": {
+      "title": "Nombre",
+      "maxWidth": 100
+    },
+    "last_name": {
+      "title": "Apellido",
+      "maxWidth": 100
+    },
+    "email": {
+      "title": "Email",
+      "maxWidth": 200
+    },
+    "mobile_phone": {
+      "title": "Celular"
+    },
+    "profile": {
+      "title": "Perfil",
+      "type": "radio",
+      "options": ["admin", "employee", "partner", "customer", "public"]
+    },
+    "namespace_id": {
+      "title": "Namespace"
+    }
+  },
+  "listColumns": [
+    "name", "email", "mobile_phone", "profile", "namespace_id"
+  ],
+  "editAction": {
+    "type": "custom",
+    "route": "users/create",
+    "name": "Crear",
+    "title": "Editar Usuario"
+  },
+  "listColumnsActions": [],
+  "views": [{
+    "type": "data",
+    "name": "allEmpleados",
+    "icon": "list"
+  }, {
+    "type": "data",
+    "name": "all",
+    "icon": "list"
+  }, {
+    "type": "data",
+    "name": "allClientes",
+    "icon": "list"
+  }],
+  "route": "admin/contact"
+}

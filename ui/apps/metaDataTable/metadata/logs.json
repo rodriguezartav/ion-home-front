@@ -1,0 +1,104 @@
+{
+  "groupByFields": ["function", "created_at", "none"],
+  "groupBy": "function",
+  "principalColumn": "function",
+  "columns": {
+    "user_name": {
+      "title": "user_name",
+      "maxWidth": 100
+    },
+    "path": {
+      "title": "path"
+    },
+    "link": {
+      "title": "link",
+      "type": "link",
+      "maxWidth": 100
+    },
+    "auth_link": {
+      "title": "auth link",
+      "type": "link",
+      "maxWidth": 100
+    },
+    "function_version": {
+      "title": "Version"
+    },
+
+    "function": {
+      "title": "function"
+    },
+
+    "type": {
+      "title": "type"
+    },
+
+    "api_stage": {
+      "title": "api_stage"
+    },
+
+    "message": {
+      "title": "message",
+      "type": "text"
+    },
+
+    "elapsed": {
+      "title": "elapsed",
+      "type": "integer",
+      "totalize": true
+    },
+    "auth_duration": {
+      "title": "auth duration",
+      "type": "integer",
+      "totalize": true
+    },
+    "status": {
+      "title": "status",
+      "type": "integer"
+    },
+    "auth_status": {
+      "title": "auth_status",
+      "type": "integer"
+    },
+    "created_at": {
+      "title": "created at",
+      "type": "timestamp"
+    }
+
+  },
+  "listColumnsActions": [],
+  "listColumns": [
+    "function", "created_at", "auth_status", "status", "path", "user_name", "type", "link", "auth_link", "function_version", "message", "auth_duration", "elapsed"
+  ],
+  "views": [{
+    "type": "data",
+    "title": "Api ultima hora",
+    "name": "all?time=hour&type=api",
+    "icon": "list"
+  }, {
+    "type": "data",
+    "title": "Api hoy",
+    "name": "all?time=today&type=api",
+    "icon": "list"
+  }, {
+    "type": "data",
+    "title": "Api ayer",
+    "name": "all?time=yesterday&type=api",
+    "icon": "list"
+  }, {
+    "type": "data",
+    "title": "Apps ultima hora",
+    "name": "all?time=hour&type=app",
+    "icon": "list"
+  }, {
+    "type": "data",
+    "title": "Apps hoy",
+    "name": "all?time=today&type=app",
+    "icon": "list"
+  }, {
+    "type": "data",
+    "title": "Apps ayer",
+    "name": "all?time=yesterday&type=app",
+    "icon": "list"
+  }],
+  "route": "registro/log"
+}

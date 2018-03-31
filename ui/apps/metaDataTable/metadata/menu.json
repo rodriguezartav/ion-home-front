@@ -1,0 +1,24 @@
+{
+  "items": [{
+    "title": "Administracion",
+    "subtitle": "Listas",
+    "options": [{
+
+      "title": "Usuarios",
+      "link": "?app=users"
+    }, {
+      "title": "Logs",
+      "link": "?app=logs"
+    }, {
+      "title": "Operations",
+      "link": "?app=operations"
+    }]
+  }, {
+    "title": "Assets",
+    "subtitle": "Listas",
+    "options": [{
+      "title": "Assets",
+      "link": "?app=assets"
+    }]
+  }]
+}

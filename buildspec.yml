@@ -1,0 +1,28 @@
+version: 0.1
+phases:
+  install:
+    commands:
+      - npm install .
+      - npm install webpack@~3.0.0 -g
+      - aws s3 sync s3://$S3_KEYS/ ~/.ssh/
+      - sudo apt-get clean
+      - sudo rm -rf /var/lib/apt/lists/*
+      - sudo apt-get update
+      - sudo apt-get -y install openssh-client
+      - eval `ssh-agent -s`
+  build:
+    commands:
+      - chmod -R 600 ~/.ssh
+      - ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
+      - ssh-agent sh -c 'ssh-add ~/.ssh/id_rsa'
+      - git clone git@github.com:Rodco/ion.git
+      - git clone git@github.com:Rodco/vibra.git
+      - webpack -p --progress
+      - aws s3 sync ./dist $S3_PATH --acl public-read
+artifacts:
+  type: zip
+  files:
+    - package.json
+
+
+

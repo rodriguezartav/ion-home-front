@@ -1,0 +1,27 @@
+.slds-tile__detail.modal_detail dt{
+  width: 10%;
+}
+
+.slds-tile__detail.modal_detail dd{
+  width: 90%;
+}
+
+.slds-tile__detail.modal_detail .object-key{
+  display: inline-block;
+  width: 10%;
+  text-transform: lowercase;
+  overflow: hidden;
+  margin-right: 10px;
+  vertical-align: top;
+}
+
+.slds-tile__detail.modal_detail .object-message{
+  display: inline-block;
+  width: 90%;
+  text-transform: lowercase;
+  overflow: hidden;
+  white-space: normal;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 3px;
+}
+
