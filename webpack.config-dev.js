@@ -12,11 +12,12 @@ module.exports = {
   context: path.resolve(__dirname, 'ui'),
   entry: {
     metaDataTable: ['react-hot-loader/patch', 'webpack/hot/only-dev-server', 'webpack-dev-server/client?http://localhost:8080', './apps/metaDataTable/index.jsx'],
+    public: ['react-hot-loader/patch', 'webpack/hot/only-dev-server', 'webpack-dev-server/client?http://localhost:8080', './apps/public/index.jsx']
   },
   output: {
     filename: '[name].js',
     chunkFilename: '[name].bundle.js',
-    path: path.resolve(__dirname, 'dist'),
+    path: "/var/www/html",
     publicPath: '/', // New
   },
   devServer: {
@@ -83,8 +84,14 @@ module.exports = {
 
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, 'ui', 'template.html'),
-      filename: 'index.html',
+      filename: 'admin.html',
       chunks: ['metaDataTable', 'style'],
+      inject: 'body'
+    }),
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, 'ui', 'public.html'),
+      filename: 'index.html',
+      chunks: ['public', 'style'],
       inject: 'body'
     }),
     new CopyWebpackPlugin([{

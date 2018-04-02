@@ -1,6 +1,6 @@
 {
-  "groupBy": "status",
-  "groupByFields": ["status"],
+  "groupBy": "type",
+  "groupByFields": ["type"],
   "principalColumn": "name",
   "columns": {
     "name": {
